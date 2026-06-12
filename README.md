@@ -41,4 +41,14 @@ Full rules live in the master profile document.
 
 ## Deploying
 
-Hosted on Vercel. Redeploy = push to the connected repo, or `vercel deploy` from this folder. `.vercelignore` ensures only the site ships.
+Hosted on Vercel, imported from the private GitHub repo `iMaasai/personal-website` — every push to `main` auto-deploys. `.vercelignore` ensures only the site ships.
+
+**Live URL:** https://personal-website-loorem-s-projects.vercel.app
+
+## Next steps
+
+1. **Buy looremeta.me** (confirmed available, June 2026) — best option: Vercel at $12.99/yr flat ([vercel.com/domains/search?q=looremeta.me](https://vercel.com/domains/search?q=looremeta.me)); Porkbun is $8.80 year one but renews at $17.27. After purchase: attach to the `personal-website` Vercel project, add canonical URL + og:url meta tags, and submit to Google Search Console.
+2. **Enable 2FA on Vercel** — the setup prompt was skipped during deployment.
+3. **Align external profiles with the master profile** — LinkedIn (incl. reconsidering the "Data Generalist" headline), Gleac, about.me, Torre, ResearchGate, X/IG bios. Propagate: new tagline ("Building intelligent data & AI systems…"), "AI, data & analytics" framing, new Numida title (Applied AI, Data & Analytics Lead — confirm final wording with manager first), Phoenix role (member/contributor/mentor).
+4. **Sync the local git repo with GitHub** — the folder's git history and the uploaded repo were created separately; from this folder run: `git remote add origin https://github.com/iMaasai/personal-website.git && git fetch origin && git push -u origin main --force` (local is the canonical version).
+5. **Content ideas parked for later** — Strava embed/live stats, photo touches from the bookshelf/journal scans, a writing/notes section if he starts publishing.
