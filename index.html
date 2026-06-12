@@ -1,0 +1,778 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Isaac Looremeta — Data & AI, Nairobi</title>
+<meta name="description" content="Isaac Looremeta — Kenyan AI, data & analytics leader. Building intelligent data &amp; AI systems, developing human capability, and helping shape an AI future that works for everyone.">
+<meta property="og:title" content="Isaac Looremeta — Data & AI, Nairobi">
+<meta property="og:description" content="Building intelligent data &amp; AI systems, developing human capability, and helping shape an AI future that works for everyone.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=Space+Grotesk:wght@300..600&family=JetBrains+Mono:wght@400;500&family=Caveat:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --forest:#0C2018;
+    --forest-2:#143628;
+    --cream:#F7F3E9;
+    --cream-2:#EFE9DA;
+    --ink:#161D18;
+    --gold:#C2A04C;
+    --gold-soft:#D9C28A;
+    --rust:#A4502C;
+    --muted:#6E7A6F;
+    --line:rgba(22,29,24,.18);
+    --line-light:rgba(247,243,233,.22);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--cream);
+    color:var(--ink);
+    font-family:'Space Grotesk',sans-serif;
+    font-weight:300;
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+  }
+  ::selection{background:var(--gold);color:var(--forest)}
+  a{color:inherit;text-decoration:none}
+
+  .serif{font-family:'Fraunces',serif}
+  .mono{font-family:'JetBrains Mono',monospace;font-size:.72rem;letter-spacing:.18em;text-transform:uppercase}
+
+  .wrap{max-width:1180px;margin:0 auto;padding:0 clamp(1.25rem,5vw,4rem)}
+
+  /* ---------- NAV ---------- */
+  nav{
+    position:fixed;top:0;left:0;right:0;z-index:50;
+    display:flex;justify-content:space-between;align-items:center;
+    padding:1.1rem clamp(1.25rem,5vw,4rem);
+    color:#F7F3E9;
+    transition:background .35s,color .35s,box-shadow .35s,padding .35s;
+  }
+  nav.scrolled{
+    background:rgba(247,243,233,.9);
+    -webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);
+    color:var(--ink);
+    box-shadow:0 1px 0 rgba(22,29,24,.12);
+    padding-top:.8rem;padding-bottom:.8rem;
+  }
+  nav .brand{font-family:'Fraunces',serif;font-size:1.05rem;font-weight:500;letter-spacing:.02em}
+  nav .links{display:flex;gap:1.8rem}
+  nav .links a{font-family:'JetBrains Mono',monospace;font-size:.66rem;letter-spacing:.2em;text-transform:uppercase;opacity:.75;transition:opacity .25s}
+  nav .links a:hover{opacity:1}
+  @media(max-width:720px){nav .links{display:none}}
+
+  /* ---------- HERO ---------- */
+  header{
+    position:relative;min-height:100svh;
+    background:var(--forest);color:var(--cream);
+    display:flex;flex-direction:column;justify-content:flex-end;
+    overflow:hidden;
+  }
+  header svg.topo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.5}
+  .hero-inner{position:relative;z-index:2;padding-bottom:clamp(3rem,8vh,6rem)}
+  .hero-kicker{color:var(--gold-soft);margin-bottom:1.6rem;display:flex;align-items:center;gap:1rem}
+  .hero-kicker::before{content:"";display:block;width:3.2rem;height:1px;background:var(--gold)}
+  h1{
+    font-family:'Fraunces',serif;font-weight:400;
+    font-size:clamp(3.2rem,11vw,8.5rem);
+    line-height:.95;letter-spacing:-.02em;
+  }
+  h1 em{font-style:italic;color:var(--gold-soft)}
+  .hero-sub{
+    margin-top:2.2rem;max-width:34rem;
+    font-size:clamp(1rem,1.6vw,1.2rem);color:rgba(247,243,233,.82);
+  }
+  .hero-names{margin-top:2.6rem;color:rgba(247,243,233,.45)}
+  .hero-names #aka{color:var(--gold-soft)}
+  .hero-names .caret{
+    display:inline-block;width:1px;height:.95em;background:var(--gold-soft);
+    margin-left:2px;vertical-align:-.12em;animation:blink 1.1s step-end infinite;
+  }
+  @keyframes blink{0%,100%{opacity:1}50%{opacity:0}}
+  .hero-meta{
+    display:flex;justify-content:space-between;align-items:flex-end;gap:2rem;
+    border-top:1px solid var(--line-light);margin-top:3rem;padding-top:1.2rem;
+    flex-wrap:wrap;
+  }
+  .hero-meta span{color:rgba(247,243,233,.55)}
+
+  /* ---------- SECTIONS ---------- */
+  section{padding:clamp(4.5rem,10vh,8rem) 0;scroll-margin-top:4.5rem}
+  .sec-head{display:flex;align-items:baseline;gap:1.4rem;margin-bottom:clamp(2.5rem,6vh,4.5rem)}
+  .sec-head .num{font-family:'JetBrains Mono',monospace;font-size:.72rem;letter-spacing:.18em;color:var(--rust)}
+  .sec-head h2{font-family:'Fraunces',serif;font-weight:400;font-size:clamp(1.9rem,4vw,3rem);letter-spacing:-.01em}
+  .sec-head::after{content:"";flex:1;height:1px;background:var(--line);transform:translateY(-6px)}
+
+  /* about */
+  .about-grid{display:grid;grid-template-columns:7fr 5fr;gap:clamp(2rem,6vw,5rem)}
+  @media(max-width:860px){.about-grid{grid-template-columns:1fr}}
+  .lede{font-family:'Fraunces',serif;font-weight:300;font-size:clamp(1.5rem,2.8vw,2.15rem);line-height:1.35;letter-spacing:-.01em}
+  .lede em{color:var(--rust)}
+  .about-body p{margin-bottom:1.2rem;color:#3A453C}
+  .pullquote{
+    margin-top:2.4rem;padding-left:1.4rem;border-left:2px solid var(--gold);
+    font-family:'Fraunces',serif;font-style:italic;font-size:1.25rem;color:var(--forest-2);
+  }
+  .pullquote .mono{display:block;margin-top:.7rem;font-style:normal;color:var(--muted)}
+
+  /* pillars */
+  .pillar{
+    display:grid;grid-template-columns:9rem 1fr 2fr;gap:2rem;
+    padding:2.2rem 0;border-top:1px solid var(--line);align-items:baseline;
+  }
+  .pillar:last-child{border-bottom:1px solid var(--line)}
+  .pillar .rn{font-family:'Fraunces',serif;font-size:2.6rem;font-weight:300;color:var(--gold)}
+  .pillar h3{font-family:'Fraunces',serif;font-weight:500;font-size:1.45rem}
+  .pillar p{color:#3A453C}
+  @media(max-width:860px){.pillar{grid-template-columns:4rem 1fr}.pillar p{grid-column:2}}
+
+  /* work timeline */
+  .job{
+    display:grid;grid-template-columns:10rem 1fr;gap:2rem;
+    padding:1.9rem 0;border-top:1px solid var(--line);
+  }
+  .job:last-of-type{border-bottom:1px solid var(--line)}
+  .job .when{font-family:'JetBrains Mono',monospace;font-size:.72rem;letter-spacing:.14em;color:var(--muted);padding-top:.45rem}
+  .job h3{font-family:'Fraunces',serif;font-weight:500;font-size:1.35rem}
+  .job .org{color:var(--rust);font-weight:400;font-size:.95rem;margin-bottom:.5rem}
+  .job p{color:#3A453C;max-width:46rem}
+  @media(max-width:720px){.job{grid-template-columns:1fr;gap:.4rem}}
+
+  .stats{
+    display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);
+    border:1px solid var(--line);margin-top:4rem;
+  }
+  .stat{background:var(--cream);padding:1.8rem 1.4rem}
+  .stat b{display:block;font-family:'Fraunces',serif;font-weight:400;font-size:clamp(1.7rem,3vw,2.5rem);color:var(--forest-2)}
+  .stat span{color:var(--muted);font-size:.85rem}
+  @media(max-width:720px){.stats{grid-template-columns:repeat(2,1fr)}}
+
+  /* ventures */
+  .venture{
+    display:grid;grid-template-columns:1fr 2fr;gap:2rem;
+    padding:2rem 0;border-top:1px solid var(--line);
+  }
+  .venture:last-child{border-bottom:1px solid var(--line)}
+  .venture h3{font-family:'Fraunces',serif;font-weight:500;font-size:1.5rem}
+  .venture .tag{display:block;margin-top:.5rem;color:var(--rust)}
+  .venture p{color:#3A453C;max-width:44rem}
+  .venture a.ext{border-bottom:1px solid var(--gold);transition:color .2s}
+  .venture a.ext:hover{color:var(--rust)}
+  @media(max-width:720px){.venture{grid-template-columns:1fr;gap:.6rem}}
+
+  /* values — dark band */
+  .values{background:var(--forest);color:var(--cream)}
+  .values .sec-head h2{color:var(--cream)}
+  .values .sec-head::after{background:var(--line-light)}
+  .values-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,5vw,4.5rem)}
+  @media(max-width:860px){.values-grid{grid-template-columns:1fr}}
+  .values .lede{color:var(--cream)}
+  .values .lede em{color:var(--gold-soft)}
+  .cause{padding:1.2rem 0;border-top:1px solid var(--line-light)}
+  .cause:last-child{border-bottom:1px solid var(--line-light)}
+  .cause h4{font-family:'Fraunces',serif;font-weight:500;font-size:1.1rem;color:var(--gold-soft)}
+  .cause p{color:rgba(247,243,233,.72);font-size:.95rem}
+  .sdgs{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:.7rem}
+  .sdgs span{
+    font-family:'JetBrains Mono',monospace;font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;
+    color:rgba(247,243,233,.85);border:1px solid var(--line-light);
+    padding:.45rem .8rem;border-radius:2px;
+  }
+  .sdgs span b{color:var(--gold-soft);font-weight:500;margin-right:.45rem}
+
+  /* beyond */
+  .run-graphic{margin:3rem 0 1rem;border:1px solid var(--line);padding:2rem;background:var(--cream-2)}
+  .run-graphic svg{width:100%;height:auto;display:block}
+  .pursuits{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);margin-top:3rem}
+  .pursuit{background:var(--cream);padding:1.8rem 1.5rem;min-height:11rem;display:flex;flex-direction:column;justify-content:space-between}
+  .pursuit h4{font-family:'Fraunces',serif;font-weight:500;font-size:1.2rem;margin-bottom:.6rem}
+  .pursuit p{color:#3A453C;font-size:.92rem}
+  .pursuit .mono{color:var(--rust);margin-bottom:.9rem}
+  @media(max-width:860px){.pursuits{grid-template-columns:1fr 1fr}}
+  @media(max-width:560px){.pursuits{grid-template-columns:1fr}}
+
+  /* inner work / practice */
+  .practice{background:var(--cream-2)}
+  .ritual{border:1px solid var(--line);background:var(--cream);padding:2rem;margin-top:1rem}
+  .ritual svg{width:100%;height:auto;display:block}
+  .notebook{display:grid;grid-template-columns:repeat(2,1fr);gap:2rem;margin-top:3.5rem}
+  @media(max-width:860px){.notebook{grid-template-columns:1fr}}
+  .page{
+    background:#FDFBF4;border:1px solid var(--line);
+    padding:2rem 2rem 2.2rem;position:relative;
+    background-image:repeating-linear-gradient(transparent,transparent 31px,rgba(22,29,24,.08) 31px,rgba(22,29,24,.08) 32px);
+    box-shadow:4px 5px 0 rgba(22,29,24,.06);
+  }
+  .page:nth-child(odd){transform:rotate(-.4deg)}
+  .page:nth-child(even){transform:rotate(.5deg)}
+  .page .ph{font-family:'Caveat',cursive;font-size:1.55rem;font-weight:600;color:#B33A3A;line-height:32px}
+  .page .pb{font-family:'Caveat',cursive;font-size:1.45rem;color:#2D4B8E;line-height:32px}
+  .page .pb u{text-decoration-color:#C97A3D;text-underline-offset:4px}
+  .page .src{display:block;margin-top:1rem;font-family:'JetBrains Mono',monospace;font-size:.62rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
+  .marginalia{
+    margin-top:3rem;text-align:center;
+    font-family:'Caveat',cursive;font-size:1.7rem;color:#B33A3A;transform:rotate(-1deg);
+  }
+  .marginalia .src{font-family:'JetBrains Mono',monospace;font-size:.62rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);display:block;margin-top:.4rem;transform:none}
+
+  /* contact */
+  .contact{background:var(--forest);color:var(--cream);text-align:left}
+  .contact h2{font-family:'Fraunces',serif;font-weight:400;font-size:clamp(2.4rem,7vw,5.5rem);letter-spacing:-.02em;line-height:1.05}
+  .contact h2 em{color:var(--gold-soft)}
+  .contact .email{
+    display:inline-block;margin-top:2.2rem;font-family:'Fraunces',serif;font-size:clamp(1.2rem,2.6vw,1.9rem);
+    border-bottom:1px solid var(--gold);padding-bottom:.2rem;transition:color .25s;
+  }
+  .contact .email:hover{color:var(--gold-soft)}
+  .socials{display:flex;gap:2rem;margin-top:3rem;flex-wrap:wrap}
+  .socials a{font-family:'JetBrains Mono',monospace;font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(247,243,233,.65);transition:color .2s}
+  .socials a:hover{color:var(--gold-soft)}
+  footer{
+    background:var(--forest);color:rgba(247,243,233,.45);
+    padding:2.2rem 0 2.6rem;border-top:1px solid var(--line-light);
+  }
+  .foot-row{display:flex;justify-content:space-between;gap:1.5rem;flex-wrap:wrap}
+
+  /* gold dust simulation */
+  #dust{
+    position:fixed;inset:0;width:100%;height:100%;
+    z-index:4;pointer-events:none;
+  }
+  nav{z-index:50}
+
+  /* reveal */
+  .reveal{opacity:0;transform:translateY(26px);transition:opacity .8s cubic-bezier(.2,.6,.2,1),transform .8s cubic-bezier(.2,.6,.2,1)}
+  .reveal.in{opacity:1;transform:none}
+</style>
+</head>
+<body>
+
+<canvas id="dust" aria-hidden="true"></canvas>
+
+<nav>
+  <a class="brand" href="#top">Isaac&nbsp;Looremeta</a>
+  <div class="links">
+    <a href="#about">Profile</a>
+    <a href="#work">Work</a>
+    <a href="#ventures">Ventures</a>
+    <a href="#values">Values</a>
+    <a href="#practice">Inner&nbsp;work</a>
+    <a href="#beyond">Beyond</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
+
+<!-- ================= HERO ================= -->
+<header id="top">
+  <!-- Mount Kenya contour lines + data constellation -->
+  <svg class="topo" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <g fill="none" stroke="#C2A04C" stroke-width="1" opacity=".34">
+      <path d="M-60 760 C 220 700, 380 740, 560 660 S 940 560, 1140 620 S 1380 700, 1520 660"/>
+      <path d="M-60 690 C 240 620, 420 660, 600 570 S 950 460, 1150 530 S 1390 620, 1520 580"/>
+      <path d="M-60 620 C 260 540, 460 580, 640 480 S 960 360, 1160 440 S 1400 540, 1520 500"/>
+      <path d="M-60 550 C 280 460, 500 500, 680 390 S 970 270, 1170 350 S 1410 460, 1520 420"/>
+      <path d="M-60 480 C 300 380, 540 420, 720 300 S 980 180, 1180 270 S 1420 380, 1520 340"/>
+      <path d="M120 480 C 380 340, 560 360, 740 230 S 990 110, 1180 200"/>
+      <path d="M300 460 C 500 320, 640 300, 770 180 S 990 60, 1140 140"/>
+      <path d="M460 430 C 600 320, 700 260, 790 140 S 980 30, 1090 100"/>
+    </g>
+    <g fill="#D9C28A" opacity=".75">
+      <circle cx="180" cy="170" r="2"/><circle cx="340" cy="90" r="1.4"/>
+      <circle cx="540" cy="150" r="1.8"/><circle cx="760" cy="70" r="1.4"/>
+      <circle cx="980" cy="120" r="2"/><circle cx="1180" cy="60" r="1.4"/>
+      <circle cx="1320" cy="160" r="1.8"/><circle cx="1100" cy="230" r="1.2"/>
+      <circle cx="640" cy="240" r="1.2"/><circle cx="420" cy="210" r="1.4"/>
+    </g>
+    <g stroke="#D9C28A" stroke-width=".5" opacity=".3">
+      <line x1="180" y1="170" x2="340" y2="90"/><line x1="340" y1="90" x2="540" y2="150"/>
+      <line x1="540" y1="150" x2="760" y2="70"/><line x1="760" y1="70" x2="980" y2="120"/>
+      <line x1="980" y1="120" x2="1180" y2="60"/><line x1="1180" y1="60" x2="1320" y2="160"/>
+    </g>
+  </svg>
+
+  <div class="wrap hero-inner">
+    <p class="mono hero-kicker">Nairobi, Kenya — AI · Data · Analytics</p>
+    <h1>Isaac<br>Looremeta<em>.</em></h1>
+    <p class="hero-sub">Building intelligent data &amp; AI systems, developing human capability, and helping shape an AI future that works for everyone — starting in Africa.</p>
+    <p class="mono hero-names">Also answers to: <span id="aka"></span><span class="caret"></span></p>
+    <div class="hero-meta">
+      <span class="mono">Applied AI, Data &amp; Analytics Lead — Numida (YC W22)</span>
+      <span class="mono">Co-founder — VelocityStack</span>
+      <span class="mono">CMU Africa '21</span>
+    </div>
+  </div>
+</header>
+
+<!-- ================= ABOUT ================= -->
+<section id="about">
+  <div class="wrap">
+    <div class="sec-head reveal"><span class="num">01</span><h2>Profile</h2></div>
+    <div class="about-grid">
+      <div class="reveal">
+        <p class="lede">A Kenyan AI, data &amp; analytics leader working where <em>applied data systems</em>, <em>talent development</em>, and <em>AI governance</em> meet — convinced that Africa's AI future depends as much on the people and institutions we build as the software we ship.</p>
+        <div class="pullquote">
+          “My North Star is to leave the world better than I found it.”
+          <span class="mono">— the operating principle</span>
+        </div>
+      </div>
+      <div class="about-body reveal">
+        <p>Loorem has spent 7+ years leading analytics functions and building modern data infrastructure across fintech, agritech, education, government, and global nonprofits — from Nairobi to London to the Wikimedia movement.</p>
+        <p>Trained as a software engineer (Kenyatta University) and information technologist (MSc, Carnegie Mellon University Africa), he works as a self-described <strong>data generalist</strong>: equally at home designing dbt architectures, shipping LLM-powered agents, advising leadership on strategy, or teaching a room full of first-time analysts.</p>
+        <p>He approaches every problem the same way: define the problem, define the outcome, identify the stakeholders, assess the data, iterate toward impact. Technology is never the end goal — capability is.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PILLARS ================= -->
+<section id="pillars" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head reveal"><span class="num">02</span><h2>Three pillars</h2></div>
+    <div class="pillar reveal">
+      <span class="rn">I.</span>
+      <h3>Applied data &amp; AI systems</h3>
+      <p>Analytics engineering, data infrastructure, experimentation platforms, decision-support systems, and AI agents that solve real problems in financial inclusion and other high-impact sectors.</p>
+    </div>
+    <div class="pillar reveal">
+      <span class="rn">II.</span>
+      <h3>Talent development</h3>
+      <p>Practical pathways into data and AI careers — through VelocityStack's enterprise training, and panels, talks, and mentorship at Phoenix KE Analytics, including mentoring young African women into a field that still skews male.</p>
+    </div>
+    <div class="pillar reveal">
+      <span class="rn">III.</span>
+      <h3>AI governance</h3>
+      <p>Shaping how AI is governed and deployed across Africa — AI Talent &amp; Skills Working Group member at the Africa AI Council Secretariat; trained in AI safety and governance (BlueDot curriculum, Securiti).</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= WORK ================= -->
+<section id="work" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head reveal"><span class="num">03</span><h2>Selected work</h2></div>
+
+    <div class="pullquote reveal" style="margin:0 0 3rem;max-width:34rem">
+      “My heart is in the work.”
+      <span class="mono">— Carnegie Mellon's motto, and his</span>
+    </div>
+
+    <div class="job reveal">
+      <span class="when">2025 — Now</span>
+      <div>
+        <h3>Applied AI, Data &amp; Analytics Lead</h3>
+        <p class="org">Numida (YC W22) · Nairobi — fintech for African micro &amp; small businesses</p>
+        <p>Leads the data analytics function: LLM + n8n workflow automation cutting manual work by 40%, AI agents (CRO Copilot, AI Photo Reviewer, “Nina”), pricing &amp; retention analytics, Snowflake/dbt architecture, and a Lightdash rollout that put data in everyone's hands. Contributed to a successful $150K GAIL funding initiative.</p>
+      </div>
+    </div>
+    <div class="job reveal">
+      <span class="when">2023 — 2025</span>
+      <div>
+        <h3>Product Data Analyst</h3>
+        <p class="org">The Stepstone Group · London (remote)</p>
+        <p>Drove product analysis for an AI interviewer (+35% user acceptance, +15% candidate offers), automated anomaly detection with Microsoft Fabric, and built self-serve data marts that cut ticket waiting time by 30%.</p>
+      </div>
+    </div>
+    <div class="job reveal">
+      <span class="when">2024</span>
+      <div>
+        <h3>Data Analytics &amp; AI Consultant</h3>
+        <p class="org">GradeFlow · USA (remote)</p>
+        <p>End-to-end ELT architecture in two weeks (Airbyte, dbt, PostgreSQL); LLM-powered grading and feedback; an Engagement &amp; Trust Scoring Engine for student behaviour.</p>
+      </div>
+    </div>
+    <div class="job reveal">
+      <span class="when">2022 — 2023</span>
+      <div>
+        <h3>Global Data &amp; Insights Fellow</h3>
+        <p class="org">The Wikimedia Foundation</p>
+        <p>Equity Landscape analysis, community-safety reporting pipelines, and analytics supporting content growth for underserved African languages.</p>
+      </div>
+    </div>
+    <div class="job reveal">
+      <span class="when">2021 — 2023</span>
+      <div>
+        <h3>Analytics Engineer</h3>
+        <p class="org">Apollo Agriculture · Nairobi / Amsterdam</p>
+        <p>ELT with Stitch/dbt/Postgres, a data-science-driven agent recruitment system (+35% agent productivity), and dashboard redesigns that lifted adoption 25%.</p>
+      </div>
+    </div>
+    <div class="job reveal">
+      <span class="when">2016 — 2021</span>
+      <div>
+        <h3>Earlier chapters</h3>
+        <p class="org">MediaPal · The ICT Authority · Carnegie Mellon</p>
+        <p>Built MediaPal's first data product; kept 700GB+ of government databases at 99% uptime; CMU projects spanning ML for energy-access data (Power for All), Rwanda's post-pandemic school siting (22,000+ classrooms), and accessible digital textbooks for children with intellectual disabilities.</p>
+      </div>
+    </div>
+
+    <div class="stats reveal">
+      <div class="stat"><b>7+</b><span>years in AI, data &amp; analytics</span></div>
+      <div class="stat"><b>22,000+</b><span>classrooms sited with his analysis in Rwanda</span></div>
+      <div class="stat"><b>−40%</b><span>manual work via LLM automation at Numida</span></div>
+      <div class="stat"><b>$150K</b><span>funding supported by his data initiatives</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= VENTURES ================= -->
+<section id="ventures" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head reveal"><span class="num">04</span><h2>Ventures &amp; public-interest work</h2></div>
+
+    <div class="venture reveal">
+      <div>
+        <h3><a class="ext" href="https://velocitystack.xyz" target="_blank" rel="noopener">VelocityStack</a></h3>
+        <span class="mono tag">Co-founder · Nairobi — Kigali</span>
+      </div>
+      <p>AI engineering and AI training for East African enterprises: production AI pilots (mobile-money fraud agents, regulatory pipelines), a 10-day AI readiness intensive, and fractional AI leadership. An Anthropic partner — among the first in Africa. From AI curiosity to a board-ready pilot in two weeks.</p>
+    </div>
+    <div class="venture reveal">
+      <div>
+        <h3>Phoenix KE Analytics</h3>
+        <span class="mono tag">Member, contributor &amp; mentor</span>
+      </div>
+      <p>Panels, talks, and mentorship across data analytics, data science, data engineering, and AI — with a standing commitment to mentoring young African women into the profession.</p>
+    </div>
+    <div class="venture reveal">
+      <div>
+        <h3><a class="ext" href="https://africafarmedanimals.info/" target="_blank" rel="noopener">Africa Farmed Animals Directory</a></h3>
+        <span class="mono tag">Creator</span>
+      </div>
+      <p>A continent-wide platform mapping organizations working on farmed-animal welfare across Africa — improving ecosystem visibility, coordination, and funding discovery. Built with React, Supabase, and AI-assisted development.</p>
+    </div>
+    <div class="venture reveal">
+      <div>
+        <h3>Africa AI Council Secretariat</h3>
+        <span class="mono tag">Working group member</span>
+      </div>
+      <p>AI Talent &amp; Skills Working Group — helping ensure Africa is an active participant in shaping how AI is developed, governed, and deployed, not merely a consumer of it.</p>
+    </div>
+    <div class="venture reveal">
+      <div>
+        <h3>Speaking &amp; teaching</h3>
+        <span class="mono tag">Knowledge sharing</span>
+      </div>
+      <p>GSMA Roundtable, Accion Voice on technology for women's financial inclusion, and a steady run of AI and analytics talks and trainings — the kind that turn non-technical teams into self-serve analysts.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= VALUES ================= -->
+<section id="values" class="values">
+  <div class="wrap">
+    <div class="sec-head reveal"><span class="num" style="color:var(--gold-soft)">05</span><h2>What he stands for</h2></div>
+    <div class="values-grid">
+      <div class="reveal">
+        <p class="lede">Evidence over instinct. Impact over optics. <em>Capability</em> over charity. And AI as <em>a tide that raises all the boats</em>.</p>
+        <p style="margin-top:1.6rem;color:rgba(247,243,233,.75)">Loorem is a Stoic first — the Daily Stoic in his ears on a morning run, a heavily annotated copy of Marcus Aurelius' <i>Meditations</i> on the shelf. He borrows from the effective-altruism toolkit where it serves — evidence, prioritization, doing the most good per shilling — while keeping his own counsel on the rest. The common thread: take ideas seriously, measure what matters, and act where it counts most.</p>
+        <p style="margin-top:1.2rem;color:rgba(247,243,233,.75)">Beneath it all sits faith and a deliberate practice of hope. Every year he builds a vision board — financial freedom, service, summits, music, the people he loves — and writes letters to himself from <i>Future Loorem</i>, vision board attached.</p>
+        <div class="pullquote" style="border-left-color:var(--gold);color:var(--gold-soft);margin-top:1.6rem">
+          “Waste no more time arguing about what a good man should be. Be one.”
+          <span class="mono" style="color:rgba(247,243,233,.5)">— Marcus Aurelius, Meditations</span>
+        </div>
+      </div>
+      <div class="reveal">
+        <div class="cause"><h4>AI safety &amp; governance</h4><p>Making sure the Global South — and Kenya in particular — has a voice in how transformative AI is governed.</p></div>
+        <div class="cause"><h4>Animal welfare</h4><p>Animal Advocacy Africa trainee (1 of 19 selected from 406 applicants); policy work on farmed-animal welfare standards.</p></div>
+        <div class="cause"><h4>Education &amp; women's empowerment</h4><p>Putting his work where the cause is: building “Nina,” the Numiqueens AI agent serving Numida's women entrepreneurs — work that helped win a $150K GAIL grant — mentoring young African women into data careers, speaking on technology for women's financial inclusion, and analytics that put 22,000+ classrooms where Rwanda's children needed them.</p></div>
+        <div class="cause"><h4>Climate &amp; energy</h4><p>ML for energy-access data; a long-standing soft spot for wind turbines and renewable futures.</p></div>
+        <div class="cause">
+          <h4>The SDGs he works toward</h4>
+          <div class="sdgs">
+            <span><b>04</b> Quality Education</span>
+            <span><b>05</b> Gender Equality</span>
+            <span><b>08</b> Decent Work &amp; Economic Growth</span>
+            <span><b>13</b> Climate Action</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= INNER WORK ================= -->
+<section id="practice" class="practice">
+  <div class="wrap">
+    <div class="sec-head reveal"><span class="num">06</span><h2>The inner work</h2></div>
+    <p class="lede reveal" style="max-width:44rem">Before the dashboards wake up, there is a ritual: a prayer, a run at first light, stillness on Insight Timer, and a page in the notebook.</p>
+
+    <div class="ritual reveal">
+      <p class="mono" style="color:var(--rust);margin-bottom:1.4rem">The morning, in order of operations</p>
+      <svg viewBox="0 0 1000 150" xmlns="http://www.w3.org/2000/svg" aria-label="Morning ritual: pray, run, meditate, journal">
+        <path d="M40 110 Q 500 -40 960 110" fill="none" stroke="#C2A04C" stroke-width="1.5" stroke-dasharray="4 6"/>
+        <circle cx="120" cy="86" r="5" fill="#143628"/>
+        <circle cx="372" cy="50" r="5" fill="#143628"/>
+        <circle cx="628" cy="50" r="5" fill="#143628"/>
+        <circle cx="880" cy="86" r="5" fill="#C2A04C"/>
+        <g font-family="JetBrains Mono, monospace" font-size="12" letter-spacing="2" fill="#161D18" text-anchor="middle">
+          <text x="120" y="120">PRAY</text>
+          <text x="372" y="84">RUN</text>
+          <text x="628" y="84">MEDITATE</text>
+          <text x="880" y="120">JOURNAL</text>
+        </g>
+        <g font-family="JetBrains Mono, monospace" font-size="10" fill="#6E7A6F" text-anchor="middle">
+          <text x="120" y="138">the soul</text>
+          <text x="372" y="102">the body</text>
+          <text x="628" y="102">insight timer</text>
+          <text x="880" y="138">the mind, on paper</text>
+        </g>
+      </svg>
+    </div>
+
+    <div class="notebook">
+      <div class="page reveal">
+        <p class="ph">What my ideal life looks like:</p>
+        <p class="pb">I am a friend to myself and have the freedom to pursue the things I love. I want to be a <u>source of light</u> in the world — to always leave people better &amp; happier than I found them.</p>
+        <span class="src">From the notebook — vision pages</span>
+      </div>
+      <div class="page reveal">
+        <p class="ph">North Star values</p>
+        <p class="pb">1. <u>Relationships</u> — nurture high-quality relationships with those I care about.<br>2. <u>Excellence</u> — do fewer things better. Put in the work consistently.</p>
+        <span class="src">From the notebook — values</span>
+      </div>
+      <div class="page reveal">
+        <p class="ph">What can I do now to move toward what I say matters?</p>
+        <p class="pb">Cultivate <u>focus</u>. Cultivate <u>discipline</u>. Cultivate <u>integrity</u> — do what's right even when no one is looking.</p>
+        <span class="src">From the notebook — meaning &amp; purpose</span>
+      </div>
+      <div class="page reveal">
+        <p class="ph">2026 — Witnesses of Hope</p>
+        <p class="pb">A life of faith despite hardship. Neither linger nostalgically in the past, nor rush anxiously into the future — but <u>entrust what lies ahead to God</u>.</p>
+        <span class="src">From the notebook — annual vision setting</span>
+      </div>
+    </div>
+
+    <p class="marginalia reveal">“Hope does not disappoint.”
+      <span class="src">Romans 5:5 — the vision board, every year</span>
+    </p>
+  </div>
+</section>
+
+<!-- ================= BEYOND ================= -->
+<section id="beyond">
+  <div class="wrap">
+    <div class="sec-head reveal"><span class="num">07</span><h2>Beyond the work</h2></div>
+    <p class="lede reveal" style="max-width:46rem">“Perpetually longing to be humbled in the face of a greater opponent.” Sometimes that opponent is a frontier model. Usually it's a mountain, or kilometre 61.</p>
+
+    <div class="run-graphic reveal">
+      <p class="mono" style="color:var(--rust);margin-bottom:1.2rem">The ultra log — Dusk 2 Dawn, 12 hours, overnight</p>
+      <svg viewBox="0 0 1000 190" xmlns="http://www.w3.org/2000/svg" aria-label="Ultramarathon progression: 53km, then 60km, targeting 100km">
+        <line x1="0" y1="160" x2="1000" y2="160" stroke="rgba(22,29,24,.25)" stroke-width="1"/>
+        <path d="M0 160 C 90 120, 150 96, 265 92 S 420 120, 470 150" fill="none" stroke="#143628" stroke-width="2"/>
+        <path d="M470 150 C 520 110, 560 78, 636 74 S 760 110, 800 150" fill="none" stroke="#143628" stroke-width="2"/>
+        <path d="M800 150 C 840 100, 880 50, 940 38 S 990 60, 1000 80" fill="none" stroke="#C2A04C" stroke-width="2" stroke-dasharray="6 6"/>
+        <circle cx="265" cy="92" r="4" fill="#143628"/>
+        <circle cx="636" cy="74" r="4" fill="#143628"/>
+        <circle cx="940" cy="38" r="4.5" fill="#C2A04C"/>
+        <g font-family="JetBrains Mono, monospace" font-size="13" fill="#161D18">
+          <text x="245" y="70">53 km</text>
+          <text x="616" y="52">60 km</text>
+          <text x="995" y="20" fill="#A4502C" text-anchor="end">100 km — next</text>
+        </g>
+        <g font-family="JetBrains Mono, monospace" font-size="10" fill="#6E7A6F">
+          <text x="0" y="182">DUSK</text>
+          <text x="958" y="182">DAWN</text>
+        </g>
+      </svg>
+      <p style="margin-top:1.6rem;font-family:'Fraunces',serif;font-style:italic;font-size:1.15rem;color:var(--forest-2)">“The body should be treated rigorously, that it may not be disobedient to the mind.”
+        <span class="mono" style="display:block;margin-top:.5rem;font-style:normal;color:var(--muted)">— Seneca · the late-kilometre mantra</span>
+      </p>
+    </div>
+
+    <div class="pursuits">
+      <div class="pursuit reveal">
+        <span class="mono">Endurance</span>
+        <div><h4>Ultramarathoner</h4><p>We Run Nairobi. City marathons, 12-hour overnight ultras, Kilimanjaro Marathon on the calendar. Pacing by spreadsheet, fuelled on schedule. <a class="ext" href="https://www.strava.com/athletes/120190333" target="_blank" rel="noopener" style="border-bottom:1px solid var(--gold)">Strava</a></p></div>
+      </div>
+      <div class="pursuit reveal">
+        <span class="mono">Altitude</span>
+        <div><h4>Mountain summits</h4><p>Mount Kenya, summited. The Aberdares and Mount Elgon, repeatedly. Next opponent: Kilimanjaro. The greatest opponent: Everest, soon — it doesn't know yet.</p></div>
+      </div>
+      <div class="pursuit reveal">
+        <span class="mono">Velocity</span>
+        <div><h4>F1 Sundays</h4><p>Lights out and away he goes — a loyal Red Bull Racing fan, Max Verstappen above all. Also: football, rugby, boxing, athletics.</p></div>
+      </div>
+      <div class="pursuit reveal">
+        <span class="mono">Growth, literal</span>
+        <div><h4>Plant dad</h4><p>Self-described, with the taxonomy to back it — he'll identify a species across the room. At home: Eve, Lazarus, and company. Candie and Charlotte, RIP. The balcony reached capacity long ago; acquisitions continue.</p></div>
+      </div>
+      <div class="pursuit reveal">
+        <span class="mono">Slow hours</span>
+        <div><h4>Maker of quiet things</h4><p>Cooking from whole, farm-sourced ingredients. Writing. Colouring. Jigsaw puzzles. Guitar, aspiring. East African road trips — Nairobi to Nakuru to Kampala to Arusha.</p></div>
+      </div>
+      <div class="pursuit reveal">
+        <span class="mono">After dark</span>
+        <div><h4>Dance floors</h4><p>A Westlands night out, properly done. Dance music in its deeper, esoteric forms — raves, underground sets, the occasional sunrise finish. Technically also endurance training.</p></div>
+      </div>
+      <div class="pursuit reveal">
+        <span class="mono">On the page</span>
+        <div><h4>The pursuit, as happiness</h4><p>Avid reader, print and digital. The shelf right now: <i>Empire of AI</i>, <i>AI Snake Oil</i>, <i>Unmasking AI</i>, <i>The Worlds I See</i>, <i>Britain's Gulag</i>, some Murakami. Knowledge isn't the route to the reward; it is the reward.</p></div>
+      </div>
+      <div class="pursuit reveal" style="grid-column:span 2">
+        <span class="mono">In the ears</span>
+        <div><h4>83 podcasts, one diet</h4><p>Stoicism and mastery (Daily Stoic, Finding Mastery, Huberman Lab), AI kept honest (Tech Won't Save Us, Accountable AI), systems and product (Decoder, Lenny's, The Knowledge Project), curiosity for its own sake (Radiolab, No Such Thing As A Fish) — and one Marathon Running Podcast for the long Sundays.</p></div>
+      </div>
+      <div class="pursuit reveal" style="grid-column:1/-1;background:var(--cream-2)">
+        <span class="mono">Standing appointment</span>
+        <div><h4>Letters from Future Loorem</h4><p>Every morning, the first email in his inbox is from a sender called <i>Future Loorem</i>. Vision board attached. “Hey bro — you are well. Whatever the situation right now, you got it. Keep your head held up high and remember your vision.” He writes them himself.</p></div>
+      </div>
+    </div>
+
+    <p class="marginalia reveal">“I mourned all the years I had spent sitting still.”
+      <span class="src">From the notebook margins, in red ink</span>
+    </p>
+  </div>
+</section>
+
+<!-- ================= CONTACT ================= -->
+<section id="contact" class="contact">
+  <div class="wrap">
+    <p class="mono reveal" style="color:var(--gold-soft);margin-bottom:1.6rem">08 — Say hello</p>
+    <h2 class="reveal">Build something<br>that <em>matters</em>.</h2>
+    <a class="email reveal" href="mailto:ilooremeta@gmail.com">ilooremeta@gmail.com</a>
+    <div class="socials reveal">
+      <a href="https://www.linkedin.com/in/looremeta" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://x.com/imaasai" target="_blank" rel="noopener" title="He will die on this hill.">Twitter — not “X”</a>
+      <a href="https://www.instagram.com/imaasai" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://www.strava.com/athletes/120190333" target="_blank" rel="noopener">Strava</a>
+      <a href="https://velocitystack.xyz" target="_blank" rel="noopener">VelocityStack</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap foot-row">
+    <span class="mono">© <span id="yr"></span> Isaac Looremeta</span>
+    <span class="mono">Speaks softly. Carries a big stick.</span>
+  </div>
+</footer>
+
+<script>
+  // "I have many names" — slow typewriter cycle
+  (function(){
+    const names = ['Loorem','iMaasai','Maasai','Murumbi','Rumbe','Zac','Isarush'];
+    const el = document.getElementById('aka');
+    const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if(reduced){ el.textContent = names.join(' · '); return; }
+    let n = 0;
+    function type(word, i){
+      el.textContent = word.slice(0, i);
+      if(i < word.length) setTimeout(()=>type(word, i+1), 110);
+      else setTimeout(()=>erase(word, word.length), 2400);
+    }
+    function erase(word, i){
+      el.textContent = word.slice(0, i);
+      if(i > 0) setTimeout(()=>erase(word, i-1), 55);
+      else { n = (n+1) % names.length; setTimeout(()=>type(names[n], 0), 500); }
+    }
+    type(names[0], 0);
+  })();
+
+  // Nav: solid bar after leaving the hero
+  const navEl = document.querySelector('nav');
+  const onScroll = ()=> navEl.classList.toggle('scrolled', window.scrollY > window.innerHeight*.7);
+  window.addEventListener('scroll', onScroll, {passive:true}); onScroll();
+
+  // Footer year
+  document.getElementById('yr').textContent = new Date().getFullYear();
+
+  // Scroll reveal
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} });
+  },{threshold:.12});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+  // ---- Gold dust: physics simulation that dances with the pointer ----
+  (function(){
+    if(window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    const cv = document.getElementById('dust');
+    const cx = cv.getContext('2d');
+    let W,H,DPR;
+    const mouse = {x:-9999,y:-9999,vx:0,vy:0,px:-9999,py:-9999};
+    const N = Math.min(110, Math.floor(window.innerWidth/12));
+    const P = [];
+
+    function size(){
+      DPR = Math.min(window.devicePixelRatio||1, 2);
+      W = window.innerWidth; H = window.innerHeight;
+      cv.width = W*DPR; cv.height = H*DPR;
+      cx.setTransform(DPR,0,0,DPR,0,0);
+    }
+    size(); window.addEventListener('resize', size);
+
+    for(let i=0;i<N;i++){
+      P.push({
+        x:Math.random()*window.innerWidth,
+        y:Math.random()*window.innerHeight,
+        vx:(Math.random()-.5)*.3,
+        vy:(Math.random()-.5)*.3,
+        r:.8+Math.random()*1.6,
+        ph:Math.random()*Math.PI*2,   // twinkle phase
+        sw:Math.random()<.5?1:-1      // swirl direction
+      });
+    }
+
+    window.addEventListener('pointermove', e=>{
+      mouse.vx = e.clientX - mouse.px; mouse.vy = e.clientY - mouse.py;
+      mouse.x = e.clientX; mouse.y = e.clientY;
+      mouse.px = e.clientX; mouse.py = e.clientY;
+    });
+    window.addEventListener('pointerleave', ()=>{ mouse.x = mouse.y = -9999; });
+
+    const GOLD = '194,160,76'; // var(--gold)
+    let t = 0;
+    function tick(){
+      t += .008;
+      cx.clearRect(0,0,W,H);
+
+      for(const p of P){
+        // gentle flow-field drift
+        const a = Math.sin(p.x*.0016 + t) + Math.cos(p.y*.0013 - t*.7);
+        p.vx += Math.cos(a)*.012;
+        p.vy += Math.sin(a)*.012;
+
+        // pointer physics: attraction + tangential swirl + momentum kick
+        const dx = mouse.x - p.x, dy = mouse.y - p.y;
+        const d2 = dx*dx + dy*dy, R = 180;
+        if(d2 < R*R){
+          const d = Math.sqrt(d2)||1, f = (1 - d/R);
+          p.vx += (dx/d)*f*.22 + (-dy/d)*f*.30*p.sw + mouse.vx*.004*f;
+          p.vy += (dy/d)*f*.22 + ( dx/d)*f*.30*p.sw + mouse.vy*.004*f;
+        }
+
+        p.vx *= .965; p.vy *= .965; // friction
+        p.x += p.vx; p.y += p.vy;
+
+        // wrap edges
+        if(p.x<-10)p.x=W+10; if(p.x>W+10)p.x=-10;
+        if(p.y<-10)p.y=H+10; if(p.y>H+10)p.y=-10;
+      }
+
+      // constellation links
+      cx.lineWidth = .6;
+      for(let i=0;i<N;i++){
+        for(let j=i+1;j<N;j++){
+          const dx=P[i].x-P[j].x, dy=P[i].y-P[j].y, d2=dx*dx+dy*dy;
+          if(d2<5200){
+            cx.strokeStyle = `rgba(${GOLD},${.16*(1-d2/5200)})`;
+            cx.beginPath(); cx.moveTo(P[i].x,P[i].y); cx.lineTo(P[j].x,P[j].y); cx.stroke();
+          }
+        }
+      }
+
+      // specks (twinkling)
+      for(const p of P){
+        const tw = .35 + .3*Math.sin(t*3 + p.ph);
+        cx.fillStyle = `rgba(${GOLD},${tw})`;
+        cx.beginPath(); cx.arc(p.x,p.y,p.r,0,Math.PI*2); cx.fill();
+      }
+      requestAnimationFrame(tick);
+    }
+    tick();
+  })();
+</script>
+</body>
+</html>

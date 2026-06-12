@@ -1,0 +1,13 @@
+# Private source material — never commit
+*.pdf
+*.jpg
+*.jpeg
+*.png
+isaac_looremeta_360_master_profile.md
+isaac_looremeta_profile.md
+isaac_looremeta_digital_profile.md
+isaac_looremeta_profile_other.md
+
+# System
+.DS_Store
+.vercel
