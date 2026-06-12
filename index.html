@@ -192,7 +192,10 @@
   .pursuit p{color:#3A453C;font-size:.92rem}
   .pursuit .mono{color:var(--rust);margin-bottom:.9rem}
   @media(max-width:860px){.pursuits{grid-template-columns:1fr 1fr}}
-  @media(max-width:560px){.pursuits{grid-template-columns:1fr}}
+  @media(max-width:560px){
+    .pursuits{grid-template-columns:1fr}
+    .pursuits .pursuit{grid-column:auto !important}
+  }
 
   /* inner work / practice */
   .practice{background:var(--cream-2)}
