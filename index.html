@@ -2,12 +2,43 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Isaac Looremeta — Data & AI, Nairobi</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Isaac Looremeta — AI, Data & Analytics</title>
 <meta name="description" content="Isaac Looremeta — Kenyan AI, data & analytics leader. Building intelligent data &amp; AI systems, developing human capability, and helping shape an AI future that works for everyone.">
-<meta property="og:title" content="Isaac Looremeta — Data & AI, Nairobi">
+<meta property="og:title" content="Isaac Looremeta — AI, Data & Analytics">
 <meta property="og:description" content="Building intelligent data &amp; AI systems, developing human capability, and helping shape an AI future that works for everyone.">
 <meta property="og:type" content="website">
+<meta property="og:url" content="https://loorem.fyi/">
+<meta property="og:image" content="https://loorem.fyi/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0C2018">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Isaac Looremeta",
+  "alternateName": "Loorem",
+  "url": "https://loorem.fyi/",
+  "image": "https://loorem.fyi/og-image.png",
+  "description": "Kenyan AI, data & analytics professional — building intelligent data & AI systems, developing human capability, and helping shape an AI future that works for everyone.",
+  "worksFor": {"@type": "Organization", "name": "Numida"},
+  "alumniOf": [
+    {"@type": "CollegeOrUniversity", "name": "Carnegie Mellon University Africa"},
+    {"@type": "CollegeOrUniversity", "name": "Kenyatta University"}
+  ],
+  "sameAs": [
+    "https://www.linkedin.com/in/looremeta",
+    "https://x.com/imaasai",
+    "https://www.instagram.com/imaasai",
+    "https://www.strava.com/athletes/120190333",
+    "https://velocitystack.xyz"
+  ]
+}
+</script>
+<link rel="canonical" href="https://loorem.fyi/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%230C2018'/%3E%3Ctext x='30' y='43' font-family='Georgia,serif' font-size='26' fill='%23F7F3E9' text-anchor='middle' letter-spacing='-1'%3EIML%3C/text%3E%3Ccircle cx='53' cy='40' r='4' fill='%23C2A04C'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=Space+Grotesk:wght@300..600&family=JetBrains+Mono:wght@400;500&family=Caveat:wght@400;600&display=swap" rel="stylesheet">
@@ -21,12 +52,12 @@
     --gold:#C2A04C;
     --gold-soft:#D9C28A;
     --rust:#A4502C;
-    --muted:#6E7A6F;
+    --muted:#636F64; /* 4.75:1 on cream — WCAG AA for small text */
     --line:rgba(22,29,24,.18);
     --line-light:rgba(247,243,233,.22);
   }
   *{margin:0;padding:0;box-sizing:border-box}
-  html{scroll-behavior:smooth}
+  @media(prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
   body{
     background:var(--cream);
     color:var(--ink);
@@ -47,7 +78,10 @@
   nav{
     position:fixed;top:0;left:0;right:0;z-index:50;
     display:flex;justify-content:space-between;align-items:center;
-    padding:1.1rem clamp(1.25rem,5vw,4rem);
+    padding:calc(1.1rem + env(safe-area-inset-top,0px))
+            calc(clamp(1.25rem,5vw,4rem) + env(safe-area-inset-right,0px))
+            1.1rem
+            calc(clamp(1.25rem,5vw,4rem) + env(safe-area-inset-left,0px));
     color:#F7F3E9;
     transition:background .35s,color .35s,box-shadow .35s,padding .35s;
   }
@@ -56,13 +90,78 @@
     -webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);
     color:var(--ink);
     box-shadow:0 1px 0 rgba(22,29,24,.12);
-    padding-top:.8rem;padding-bottom:.8rem;
+    padding-top:calc(.8rem + env(safe-area-inset-top,0px));padding-bottom:.8rem;
   }
   nav .brand{font-family:'Fraunces',serif;font-size:1.05rem;font-weight:500;letter-spacing:.02em}
   nav .links{display:flex;gap:1.8rem}
   nav .links a{font-family:'JetBrains Mono',monospace;font-size:.66rem;letter-spacing:.2em;text-transform:uppercase;opacity:.75;transition:opacity .25s}
   nav .links a:hover{opacity:1}
-  @media(max-width:920px){nav .links{display:none}}
+
+  /* hamburger — hidden on desktop */
+  .menu-btn{
+    display:none;appearance:none;background:none;border:0;padding:0;cursor:pointer;
+    width:44px;height:44px;margin:-10px -10px -10px 0;
+    flex-direction:column;justify-content:center;align-items:center;gap:7px;
+    color:inherit;
+  }
+  .menu-btn span{
+    display:block;width:26px;height:1.5px;background:currentColor;
+    transition:transform .3s cubic-bezier(.2,.6,.2,1);
+  }
+  body.menu-open .menu-btn span:first-child{transform:translateY(4.25px) rotate(45deg)}
+  body.menu-open .menu-btn span:last-child{transform:translateY(-4.25px) rotate(-45deg)}
+  body.menu-open nav{background:transparent;box-shadow:none;color:var(--cream)}
+  body.menu-open{overflow:hidden}
+
+  /* full-screen editorial menu */
+  .mobile-menu{
+    position:fixed;inset:0;z-index:45;
+    background:var(--forest);color:var(--cream);
+    display:flex;flex-direction:column;
+    padding:calc(5rem + env(safe-area-inset-top,0px))
+            calc(clamp(1.25rem,5vw,4rem) + env(safe-area-inset-right,0px))
+            calc(2.5rem + env(safe-area-inset-bottom,0px))
+            calc(clamp(1.25rem,5vw,4rem) + env(safe-area-inset-left,0px));
+    overflow-y:auto;
+    opacity:0;visibility:hidden;
+    transition:opacity .35s ease,visibility 0s .35s;
+  }
+  body.menu-open .mobile-menu{opacity:1;visibility:visible;transition:opacity .35s ease,visibility 0s}
+  .mobile-menu a{
+    display:flex;align-items:baseline;gap:1.1rem;
+    padding:.5rem 0;min-height:44px;
+    font-family:'Fraunces',serif;font-weight:400;
+    font-size:clamp(1.35rem,4.5svh,2rem);letter-spacing:-.01em;
+    border-top:1px solid var(--line-light);
+    opacity:0;transform:translateY(14px);
+    transition:opacity .4s ease,transform .4s cubic-bezier(.2,.6,.2,1);
+  }
+  .mobile-menu a:last-of-type{border-bottom:1px solid var(--line-light)}
+  /* auto margins center the links when they fit, collapse to 0 when they overflow (scroll) */
+  .mobile-menu a:first-of-type{margin-top:auto}
+  .mobile-menu a .num{
+    font-family:'JetBrains Mono',monospace;font-size:.66rem;letter-spacing:.18em;
+    color:var(--gold-soft);
+  }
+  body.menu-open .mobile-menu a{opacity:1;transform:none}
+  body.menu-open .mobile-menu a:nth-child(2){transition-delay:.05s}
+  body.menu-open .mobile-menu a:nth-child(3){transition-delay:.08s}
+  body.menu-open .mobile-menu a:nth-child(4){transition-delay:.11s}
+  body.menu-open .mobile-menu a:nth-child(5){transition-delay:.14s}
+  body.menu-open .mobile-menu a:nth-child(6){transition-delay:.17s}
+  body.menu-open .mobile-menu a:nth-child(7){transition-delay:.2s}
+  body.menu-open .mobile-menu a:nth-child(8){transition-delay:.23s}
+  .mobile-menu .menu-foot{
+    margin-top:auto;padding-top:2rem;
+    color:rgba(247,243,233,.45);
+  }
+  @media(max-width:920px){
+    nav .links{display:none}
+    .menu-btn{display:flex}
+  }
+  @media(prefers-reduced-motion:reduce){
+    .mobile-menu,.mobile-menu a,.menu-btn span{transition:none}
+  }
 
   /* ---------- HERO ---------- */
   header{
@@ -244,6 +343,7 @@
   /* reveal */
   .reveal{opacity:0;transform:translateY(26px);transition:opacity .8s cubic-bezier(.2,.6,.2,1),transform .8s cubic-bezier(.2,.6,.2,1)}
   .reveal.in{opacity:1;transform:none}
+  @media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
 </style>
 </head>
 <body>
@@ -261,7 +361,23 @@
     <a href="#beyond">Beyond</a>
     <a href="#contact">Contact</a>
   </div>
+  <button class="menu-btn" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu">
+    <span></span>
+    <span></span>
+  </button>
 </nav>
+
+<div class="mobile-menu" id="mobile-menu">
+  <a href="#about"><span class="num">01</span>Profile</a>
+  <a href="#pillars"><span class="num">02</span>Three pillars</a>
+  <a href="#work"><span class="num">03</span>Selected work</a>
+  <a href="#ventures"><span class="num">04</span>Ventures</a>
+  <a href="#values"><span class="num">05</span>Values</a>
+  <a href="#practice"><span class="num">06</span>The inner work</a>
+  <a href="#beyond"><span class="num">07</span>Beyond the work</a>
+  <a href="#contact"><span class="num">08</span>Say hello</a>
+  <p class="menu-foot mono">Nairobi → the world — AI · Data · Analytics</p>
+</div>
 
 <!-- ================= HERO ================= -->
 <header id="top">
@@ -292,18 +408,19 @@
   </svg>
 
   <div class="wrap hero-inner">
-    <p class="mono hero-kicker">Nairobi, Kenya — AI · Data · Analytics</p>
+    <p class="mono hero-kicker">Nairobi → the world — AI · Data · Analytics</p>
     <h1>Isaac<br>Looremeta<em>.</em></h1>
     <p class="hero-sub">Building intelligent data &amp; AI systems, developing human capability, and helping shape an AI future that works for everyone — starting in Africa.</p>
     <p class="mono hero-names">Also answers to: <span id="aka"></span><span class="caret"></span></p>
     <div class="hero-meta">
-      <span class="mono">Applied AI, Data &amp; Analytics Lead — Numida (YC W22)</span>
+      <span class="mono">Applied AI, Data &amp; Analytics — Numida (YC W22)</span>
       <span class="mono">Co-founder — VelocityStack</span>
       <span class="mono">CMU Africa '21</span>
     </div>
   </div>
 </header>
 
+<main>
 <!-- ================= ABOUT ================= -->
 <section id="about">
   <div class="wrap">
@@ -317,7 +434,7 @@
         </div>
       </div>
       <div class="about-body reveal">
-        <p>Loorem has spent 7+ years leading analytics functions and building modern data infrastructure across fintech, agritech, education, government, and global nonprofits — from Nairobi to London to the Wikimedia movement.</p>
+        <p>Loorem has spent 7+ years building analytics functions and modern data infrastructure across fintech, agritech, education, government, and global nonprofits — from Nairobi to London to the Wikimedia movement.</p>
         <p>Trained as a software engineer (Kenyatta University) and information technologist (MSc, Carnegie Mellon University Africa), he works as a self-described <strong>data generalist</strong>: equally at home designing dbt architectures, shipping LLM-powered agents, advising leadership on strategy, or teaching a room full of first-time analysts.</p>
         <p>He approaches every problem the same way: define the problem, define the outcome, identify the stakeholders, assess the data, iterate toward impact. Technology is never the end goal — capability is.</p>
       </div>
@@ -360,9 +477,9 @@
     <div class="job reveal">
       <span class="when">2025 — Now</span>
       <div>
-        <h3>Applied AI, Data &amp; Analytics Lead</h3>
+        <h3>Applied AI, Data &amp; Analytics</h3>
         <p class="org">Numida (YC W22) · Nairobi — fintech for African micro &amp; small businesses</p>
-        <p>Leads the data analytics function: LLM + n8n workflow automation cutting manual work by 40%, AI agents (CRO Copilot, AI Photo Reviewer, “Nina”), pricing &amp; retention analytics, Snowflake/dbt architecture, and a Lightdash rollout that put data in everyone's hands. Contributed to a successful $150K GAIL funding initiative.</p>
+        <p>Senior IC across the data function: LLM + n8n workflow automation cutting manual work by 40%, AI agents (CRO Copilot, AI Photo Reviewer, “Nina”), pricing &amp; retention analytics, Snowflake/dbt architecture, and a Lightdash rollout that put data in everyone's hands. Contributed to a successful $150K GAIL funding initiative.</p>
       </div>
     </div>
     <div class="job reveal">
@@ -557,17 +674,17 @@
 
     <div class="run-graphic reveal">
       <p class="mono" style="color:var(--rust);margin-bottom:1.2rem">The ultra log — Dusk 2 Dawn, 12 hours, overnight</p>
-      <svg viewBox="0 0 1000 190" xmlns="http://www.w3.org/2000/svg" aria-label="Ultramarathon progression: 53km, then 60km, targeting 100km">
+      <svg viewBox="0 0 1000 190" xmlns="http://www.w3.org/2000/svg" aria-label="Ultramarathon log: 60km in 2025, 52km in 2026, targeting 100km">
         <line x1="0" y1="160" x2="1000" y2="160" stroke="rgba(22,29,24,.25)" stroke-width="1"/>
-        <path d="M0 160 C 90 120, 150 96, 265 92 S 420 120, 470 150" fill="none" stroke="#143628" stroke-width="2"/>
-        <path d="M470 150 C 520 110, 560 78, 636 74 S 760 110, 800 150" fill="none" stroke="#143628" stroke-width="2"/>
+        <path d="M0 160 C 90 115, 150 78, 265 74 S 420 116, 470 150" fill="none" stroke="#143628" stroke-width="2"/>
+        <path d="M470 150 C 520 118, 560 92, 636 88 S 760 118, 800 150" fill="none" stroke="#143628" stroke-width="2"/>
         <path d="M800 150 C 840 100, 880 50, 940 38 S 990 60, 1000 80" fill="none" stroke="#C2A04C" stroke-width="2" stroke-dasharray="6 6"/>
-        <circle cx="265" cy="92" r="4" fill="#143628"/>
-        <circle cx="636" cy="74" r="4" fill="#143628"/>
+        <circle cx="265" cy="74" r="4" fill="#143628"/>
+        <circle cx="636" cy="88" r="4" fill="#143628"/>
         <circle cx="940" cy="38" r="4.5" fill="#C2A04C"/>
         <g font-family="JetBrains Mono, monospace" font-size="13" fill="#161D18">
-          <text x="245" y="70">53 km</text>
-          <text x="616" y="52">60 km</text>
+          <text x="245" y="52">60 km · '25</text>
+          <text x="616" y="66">52 km · '26</text>
           <text x="995" y="20" fill="#A4502C" text-anchor="end">100 km — next</text>
         </g>
         <g font-family="JetBrains Mono, monospace" font-size="10" fill="#6E7A6F">
@@ -640,6 +757,7 @@
     </div>
   </div>
 </section>
+</main>
 
 <footer>
   <div class="wrap foot-row">
@@ -673,6 +791,41 @@
   const navEl = document.querySelector('nav');
   const onScroll = ()=> navEl.classList.toggle('scrolled', window.scrollY > window.innerHeight*.7);
   window.addEventListener('scroll', onScroll, {passive:true}); onScroll();
+
+  // Mobile menu
+  (function(){
+    const btn = document.querySelector('.menu-btn');
+    const menu = document.getElementById('mobile-menu');
+    const links = menu.querySelectorAll('a');
+
+    function setMenu(open){
+      document.body.classList.toggle('menu-open', open);
+      btn.setAttribute('aria-expanded', open);
+      btn.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+      if(open) links[0].focus();
+    }
+    const isOpen = ()=> document.body.classList.contains('menu-open');
+
+    btn.addEventListener('click', ()=> setMenu(!isOpen()));
+    links.forEach(a=> a.addEventListener('click', ()=> setMenu(false)));
+
+    document.addEventListener('keydown', e=>{
+      if(!isOpen()) return;
+      if(e.key === 'Escape'){ setMenu(false); btn.focus(); return; }
+      if(e.key === 'Tab'){
+        // keep focus cycling within the open menu + toggle button
+        const cycle = [btn, ...links];
+        const i = cycle.indexOf(document.activeElement);
+        if(e.shiftKey && i <= 0){ e.preventDefault(); cycle[cycle.length-1].focus(); }
+        else if(!e.shiftKey && i === cycle.length-1){ e.preventDefault(); cycle[0].focus(); }
+      }
+    });
+
+    // close if the viewport grows past the mobile breakpoint
+    window.matchMedia('(min-width: 921px)').addEventListener('change', e=>{
+      if(e.matches && isOpen()) setMenu(false);
+    });
+  })();
 
   // Footer year
   document.getElementById('yr').textContent = new Date().getFullYear();
@@ -755,7 +908,7 @@
         for(let j=i+1;j<N;j++){
           const dx=P[i].x-P[j].x, dy=P[i].y-P[j].y, d2=dx*dx+dy*dy;
           if(d2<5200){
-            cx.strokeStyle = `rgba(${GOLD},${.16*(1-d2/5200)})`;
+            cx.strokeStyle = `rgba(${GOLD},${.12*(1-d2/5200)})`;
             cx.beginPath(); cx.moveTo(P[i].x,P[i].y); cx.lineTo(P[j].x,P[j].y); cx.stroke();
           }
         }
@@ -763,7 +916,7 @@
 
       // specks (twinkling)
       for(const p of P){
-        const tw = .35 + .3*Math.sin(t*3 + p.ph);
+        const tw = .3 + .25*Math.sin(t*3 + p.ph);
         cx.fillStyle = `rgba(${GOLD},${tw})`;
         cx.beginPath(); cx.arc(p.x,p.y,p.r,0,Math.PI*2); cx.fill();
       }

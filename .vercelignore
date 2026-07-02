@@ -1,3 +1,4 @@
 # Deploy only the site
 *
 !index.html
+!og-image.png

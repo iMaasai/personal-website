@@ -3,6 +3,8 @@
 *.jpg
 *.jpeg
 *.png
+# sole exception: the generated social-share card (approved 2026-07-02)
+!og-image.png
 isaac_looremeta_360_master_profile.md
 isaac_looremeta_profile.md
 isaac_looremeta_digital_profile.md
