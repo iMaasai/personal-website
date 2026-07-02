@@ -1,10 +1,12 @@
-# loorem.me — Personal Website
+# loorem.fyi — Personal Website
 
 The digital representation of Isaac "Loorem" Looremeta — AI, data & analytics leader, Nairobi-born global citizen.
 
+**Status: 🟢 live at [loorem.fyi](https://loorem.fyi) since July 2, 2026.** Indexed with Google Search Console; Vercel Web Analytics + Speed Insights tracking.
+
 ## What this is
 
-A single-file editorial website (`index.html`) — no build step, no dependencies beyond Google Fonts. Open it in a browser or deploy it anywhere static files are served.
+A single-file editorial website (`index.html`) — no build step, no dependencies beyond Google Fonts and Vercel's first-party analytics snippets. Open it in a browser or deploy it anywhere static files are served.
 
 ## Structure
 
@@ -46,7 +48,7 @@ Hosted on Vercel, imported from the private GitHub repo `iMaasai/personal-websit
 
 **Live URL:** https://loorem.fyi — the only public URL. The `*.vercel.app` address is behind Vercel deployment protection (SSO) by design.
 
-## Google Search Console (one-time, after DNS is live)
+## Google Search Console (✅ completed July 2026 — kept as a runbook)
 
 1. Confirm https://loorem.fyi loads with valid SSL (Vercel provisions the cert automatically once DNS propagates).
 2. Go to [search.google.com/search-console](https://search.google.com/search-console) → **Add property** → choose **Domain** type → enter `loorem.fyi`. Domain properties cover www/non-www and http/https in one go.
@@ -56,6 +58,7 @@ Hosted on Vercel, imported from the private GitHub repo `iMaasai/personal-websit
 
 ## Next steps
 
-1. **Finish domain setup** — `loorem.fyi` bought on Vercel (July 2026), attached to the `personal-website` project. Canonical + og:url tags point at it. Remaining: confirm DNS/SSL provisioning completed, then follow the Search Console section above. (Vercel 2FA: ✅ enabled July 2026.)
-2. **Align external profiles with the master profile** — LinkedIn (incl. reconsidering the "Data Generalist" headline), Gleac, about.me, Torre, ResearchGate, X/IG bios. Propagate: new tagline ("Building intelligent data & AI systems…"), "AI, data & analytics" framing, Numida role framed as senior IC, domain-only wording ("Applied AI, Data & Analytics — Numida"), never "Lead", Phoenix role (member/contributor/mentor).
-3. **Content ideas parked for later** — Strava embed/live stats, photo touches from the bookshelf/journal scans, a writing/notes section if he starts publishing.
+Launch scope is complete (domain, SSL, Search Console, analytics, 2FA — all ✅ July 2026). What remains is off-site or parked:
+
+1. **Align external profiles with the master profile** — LinkedIn (incl. reconsidering the "Data Generalist" headline), Gleac, about.me, Torre, ResearchGate, X/IG bios. Propagate: new tagline ("Building intelligent data & AI systems…"), "AI, data & analytics" framing, Numida role framed as senior IC, domain-only wording ("Applied AI, Data & Analytics — Numida"), never "Lead", Phoenix role (member/contributor/mentor).
+2. **Content ideas parked for later** — Strava embed/live stats, photo touches from the bookshelf/journal scans, a writing/notes section if he starts publishing.
