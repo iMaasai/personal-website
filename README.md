@@ -44,7 +44,7 @@ Full rules live in the master profile document.
 
 Hosted on Vercel, imported from the private GitHub repo `iMaasai/personal-website` — every push to `main` auto-deploys. `.vercelignore` ensures only the site ships.
 
-**Live URL:** https://loorem.fyi (canonical) · https://personal-website-loorem-s-projects.vercel.app
+**Live URL:** https://loorem.fyi — the only public URL. The `*.vercel.app` address is behind Vercel deployment protection (SSO) by design.
 
 ## Google Search Console (one-time, after DNS is live)
 
