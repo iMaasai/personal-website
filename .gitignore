@@ -8,6 +8,9 @@ isaac_looremeta_profile.md
 isaac_looremeta_digital_profile.md
 isaac_looremeta_profile_other.md
 
+# Dependencies
+node_modules/
+
 # System
 .DS_Store
 .vercel
