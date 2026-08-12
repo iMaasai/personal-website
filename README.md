@@ -14,7 +14,7 @@ A single-file editorial website (`index.html`) — no build step, no dependencie
 |---|---|---|
 | `index.html` | The website. Everything: markup, styles, scripts. | ✅ Deployed |
 | `README.md` | This file. | ✅ Repo only |
-| `isaac_looremeta_360_master_profile.md` | **The source of truth.** Consolidated 360° profile — career, values, journal, vision board, naming rules, content do's/don'ts. All site copy derives from it. | 🔒 Private — never deploy/commit |
+| `isaac_looremeta_360_master_profile.md` | **The living source of truth.** Consolidated 360° profile — career, values, journal, vision board, naming rules, content do's/don'ts. Current resumes and role documents supersede older professional details and should be propagated here. | 🔒 Private — never deploy/commit |
 | `*.pdf`, `*.jpg`, `*.png` | Source documents: resume, profile PDF, journal & bookshelf photos, podcast screenshots. | 🔒 Private — never deploy/commit |
 | `og-image.png` | Generated social-share card (the sole image exception, whitelisted by name). | ✅ Deployed |
 
@@ -60,5 +60,5 @@ Hosted on Vercel, imported from the private GitHub repo `iMaasai/personal-websit
 
 Launch scope is complete (domain, SSL, Search Console, analytics, 2FA — all ✅ July 2026). What remains is off-site or parked:
 
-1. **Align external profiles with the master profile** — LinkedIn (incl. reconsidering the "Data Generalist" headline), Gleac, about.me, Torre, ResearchGate, X/IG bios. Propagate: new tagline ("Building intelligent data & AI systems…"), "AI, data & analytics" framing, Numida role framed as senior IC, domain-only wording ("Applied AI, Data & Analytics — Numida"), never "Lead", Phoenix role (member/contributor/mentor).
+1. **Align external profiles with the current professional positioning** — LinkedIn, Gleac, about.me, Torre, ResearchGate, and X/IG bios. Propagate: exact Numida title (**Applied AI & Analytics Lead**), senior-IC and measured-outcome framing, VelocityStack's assessment-led Build / Train / Operate model, and Phoenix role (member/contributor/mentor).
 2. **Content ideas parked for later** — Strava embed/live stats, photo touches from the bookshelf/journal scans, a writing/notes section if he starts publishing.

@@ -30,7 +30,7 @@ Interactive features all run as vanilla JS in a `<script>` at the bottom: gold-d
 
 ## Content source of truth
 
-`isaac_looremeta_360_master_profile.md` is the master document — all site copy, naming rules, values framing, and content do's/don'ts derive from it. **Read it before editing any site copy.** It is `.gitignore`d and `.vercelignore`d; never commit or deploy it.
+`isaac_looremeta_360_master_profile.md` is the master document — all site copy, naming rules, values framing, and content do's/don'ts derive from it. **Read it before editing any site copy.** For current professional titles, dates, scope, and achievements, the latest resume and role documentation supersede older profile language; update the master profile alongside the site. The master profile is `.gitignore`d and `.vercelignore`d; never commit or deploy it.
 
 ## Content rules (short version)
 
@@ -38,7 +38,7 @@ Interactive features all run as vanilla JS in a `<script>` at the bottom: gold-d
 - Third-person: **Loorem** throughout; full name "Isaac Looremeta" only for first or formal mention.
 - Stoic first; EA is a borrowed toolkit, not an identity.
 - Phoenix KE Analytics: member/contributor/mentor — not founder; no "masterclass" references.
-- Numida role: **senior IC**, domain-only wording ("Applied AI, Data & Analytics — Numida") — never "Lead" or team-head implications, even though the master profile mentions a "Lead" retitle.
+- Numida role: use the exact title **Applied AI & Analytics Lead** (from August 2026). It is a **senior IC**, not a line-management or team-head role; describe focused, end-to-end ownership through measured impact.
 - We Run Nairobi (not Urban Swaras). Red Bull/Verstappen (not McLaren). It is called **Twitter**.
 - Never include: addresses, family/partner/mentee names, purchase-level details.
 
