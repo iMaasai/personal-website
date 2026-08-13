@@ -239,10 +239,7 @@
   .job h3{font-family:'Fraunces',serif;font-weight:500;font-size:1.35rem}
   .job .org{color:var(--rust);font-weight:400;font-size:.95rem;margin-bottom:.5rem}
   .job p{color:#3A453C;max-width:46rem}
-  .job .project-notes{list-style:none;display:grid;gap:.65rem;max-width:46rem;margin-top:.9rem;color:#3A453C}
-  .job .project-notes li{position:relative;padding-left:1.1rem}
-  .job .project-notes li::before{content:'—';position:absolute;left:0;color:var(--rust)}
-  .job .project-notes strong{color:var(--forest-2);font-weight:600}
+  .job .work-story p + p{margin-top:.9rem}
   @media(max-width:720px){.job{grid-template-columns:1fr;gap:.4rem}}
 
   .stats{
@@ -484,14 +481,12 @@
       <div>
         <h3>Applied AI &amp; Analytics Lead</h3>
         <p class="org">Numida (YC W22) · Nairobi — fintech for African micro &amp; small businesses</p>
-        <p>Applied AI &amp; Analytics Lead since August 2026, evolving from Senior Data &amp; AI Analyst. A senior IC embedded into one priority workstream at a time, owning problem framing, success metrics, production delivery, and post-launch measurement.</p>
-        <ul class="project-notes">
-          <li><strong>Nina / Numi Queens:</strong> built an AI financial-literacy and relationship-management agent for underserved women entrepreneurs; the initiative secured a $150,000 Gates Foundation-backed GAIL grant.</li>
-          <li><strong>Golden ID:</strong> led the customer-identity layer connecting records across Numida's Golden Thread data architecture, creating a reliable view of each customer.</li>
-          <li><strong>CRO Copilot:</strong> created an AI insights assistant for collections and field teams, advancing it from a hackathon proof of concept toward production.</li>
-          <li><strong>Workflow automation:</strong> automated underwriting and customer-engagement work, reducing manual intervention 40%.</li>
-          <li><strong>Analytics &amp; AI quality:</strong> introduced self-serve analytics and trained teams across Kenya and Uganda; now owns the practical standard for testing AI workflows for reliability and measurable impact.</li>
-        </ul>
+        <div class="work-story">
+          <p>At Numida, Loorem's work sits inside a larger shift: from assessing a business at a single moment to becoming a partner that understands what an entrepreneur needs over time.</p>
+          <p>Nina made that idea tangible. Built for Numi Queens, the AI agent provides financial-literacy and relationship support to underserved women entrepreneurs — a customer experience designed to say, in effect, “Numida knows me.” The work helped secure a $150,000 Gates Foundation-backed GAIL grant.</p>
+          <p>Behind that experience is Golden ID, the identity layer within Golden Thread: connecting customer signals into one dependable view so products and AI can respond to the whole relationship, not isolated transactions. Loorem also owns the framework used to decide whether AI is reliable and useful enough to ship — evidence over enthusiasm. CRO Copilot follows that discipline, moving from a hackathon prototype toward a production assistant for field and collections teams.</p>
+          <p>The quieter work follows the same philosophy. Automation reduced manual intervention by roughly 40%. Self-service analytics and training helped teams across Kenya and Uganda answer more of their own questions. The aim is not to become the person every request depends on; it is to build systems and capability that keep working without him.</p>
+        </div>
       </div>
     </div>
     <div class="job reveal">
